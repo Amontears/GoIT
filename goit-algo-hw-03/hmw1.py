@@ -15,3 +15,6 @@ days_difference = get_days_from_today("2021-10-09")
 
 if days_difference is not None:
     print(f"Сьогодні {today}, а від '2021-10-09' пройшло {days_difference} днів.")
+    
+    
+#   При запуску коду виведе   Сьогодні 2024-01-28, а від '2021-10-09' пройшло 841 днів.
