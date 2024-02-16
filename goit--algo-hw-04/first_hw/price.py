@@ -1,5 +1,6 @@
 import re
 
+
 def total_price(path):
     try:
         with open(path, "r", encoding="utf-8") as file:
@@ -24,6 +25,7 @@ def total_price(path):
         print(f"Помилка: Файл {path} не знайдено.")
     except Exception as e:
         print(f"Помилка: {e}")
+
 
 path = r"X:\GoIT\GoIT\goit--algo-hw-04\first_hw\price.txt"
 

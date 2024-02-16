@@ -1,8 +1,9 @@
 from datetime import datetime
 
+
 def get_days_from_today(date):
     try:
-        input_date = datetime.strptime(date, '%Y-%m-%d')
+        input_date = datetime.strptime(date, "%Y-%m-%d")
         today_date = datetime.today()
         date_difference = today_date - input_date
         return date_difference.days
@@ -10,11 +11,12 @@ def get_days_from_today(date):
         print("Неправильний формат дати. Використовуйте формат 'РРРР-ММ-ДД'")
         return None
 
-today = datetime.today().strftime('%Y-%m-%d')  
+
+today = datetime.today().strftime("%Y-%m-%d")
 days_difference = get_days_from_today("2021-10-09")
 
 if days_difference is not None:
     print(f"Сьогодні {today}, а від '2021-10-09' пройшло {days_difference} днів.")
-    
-    
+
+
 #   При запуску коду виведе :  Сьогодні 2024-01-28, а від '2021-10-09' пройшло 841 днів. =)

@@ -3,6 +3,7 @@ def parse_input(user_input):
     cmd = cmd.strip().lower()
     return cmd, args
 
+
 def add_contact(args, contacts):
     if len(args) == 2:
         name, phone = args
@@ -10,6 +11,7 @@ def add_contact(args, contacts):
         return "Contact added."
     else:
         return "Invalid command. Usage: add [name] [phone]"
+
 
 def change_contact(args, contacts):
     if len(args) == 2:
@@ -22,6 +24,7 @@ def change_contact(args, contacts):
     else:
         return "Invalid command. Usage: change [name] [phone]"
 
+
 def show_phone(args, contacts):
     if len(args) == 1:
         name = args[0]
@@ -32,11 +35,13 @@ def show_phone(args, contacts):
     else:
         return "Invalid command. Usage: phone [name]"
 
+
 def show_all(args, contacts):
     if not args:
         return contacts
     else:
         return "Invalid command. Usage: all"
+
 
 def main():
     contacts = {}
@@ -60,6 +65,7 @@ def main():
             print(show_all(args, contacts))
         else:
             print("Invalid command.")
+
 
 if __name__ == "__main__":
     main()

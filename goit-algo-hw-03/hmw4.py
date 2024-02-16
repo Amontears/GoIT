@@ -9,6 +9,7 @@ users = [
 
 from datetime import datetime, timedelta
 
+
 def get_upcoming_birthdays(users):
     today = datetime.today().date()
     upcoming_birthdays = []
@@ -24,28 +25,32 @@ def get_upcoming_birthdays(users):
 
         if 0 <= days_until_birthday <= 7:
             if birthday.weekday() >= 5:
-                days_until_birthday += (7 - birthday.weekday())
+                days_until_birthday += 7 - birthday.weekday()
 
             congratulation_date = today.replace(day=today.day + days_until_birthday)
 
             if congratulation_date.weekday() >= 5:
-                congratulation_date = congratulation_date.replace(day=congratulation_date.day + (7 - congratulation_date.weekday()))
+                congratulation_date = congratulation_date.replace(
+                    day=congratulation_date.day + (7 - congratulation_date.weekday())
+                )
 
             congratulation_date_str = congratulation_date.strftime("%Y.%m.%d")
 
-            upcoming_birthdays.append({"name": user["name"], "Дата привітання": congratulation_date_str})
+            upcoming_birthdays.append(
+                {"name": user["name"], "Дата привітання": congratulation_date_str}
+            )
         else:
             pass
 
     return upcoming_birthdays
+
 
 upcoming_birthdays = get_upcoming_birthdays(users)
 if upcoming_birthdays:
     print("Найближче привітання:", upcoming_birthdays[0])
 else:
     print("Немає найближчих привітань")
-    
-    
-    
+
+
 #   При запуску коду виведе : Найближче привітання: {'name': 'Сергій Бабенко', 'Дата привітання': '2024.01.30'} =)
 #   Дякую за увагу.
