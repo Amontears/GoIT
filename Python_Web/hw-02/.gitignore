@@ -102,3 +102,13 @@ dist
 
 # TernJS port file
 .tern-port
+test,
+.github,
+public,
+src,
+.dockerignore,
+.gitignore,
+.MAINTAINERS,
+package.json,
+package-lock.json,
+README
